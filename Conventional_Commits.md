@@ -25,41 +25,48 @@ El formato general de un mensaje de commit es:
 ```
 
 ## 1. Tipo (Type) - Obligatorio
+
 Esta es la parte más importante. Define la categoría del cambio. Los más comunes son:
 
-- feat: (Feature) -> Añade una nueva característica o funcionalidad.
-- fix: (Bug Fix) -> Corrige un error (bug) en el código.
-- docs: (Documentation) -> Cambios que solo afectan a la documentación (comentarios, archivos .md, etc.).
-- style: (Styling) -> Cambios que no afectan la lógica del código, solo el formato (espacios, punto y coma, etc.).
-- refactor: (Refactoring) -> Reestructura el código existente sin cambiar su comportamiento (ej. renombrar una variable, limpiar código).
-- test: (Tests) -> Añade o corrige tests (pruebas unitarias, etc.).
-- chore: (Chore / Tarea) -> Cambios de mantenimiento que no son ni fix ni feat (ej. actualizar librerías, configurar herramientas).
+* feat: (Feature) -> Añade una nueva característica o funcionalidad.
+* fix: (Bug Fix) -> Corrige un error (bug) en el código.
+* docs: (Documentation) -> Cambios que solo afectan a la documentación (comentarios, archivos .md, etc.).
+* style: (Styling) -> Cambios que no afectan la lógica del código, solo el formato (espacios, punto y coma, etc.).
+* refactor: (Refactoring) -> Reestructura el código existente sin cambiar su comportamiento (ej. renombrar una variable, limpiar código).
+* test: (Tests) -> Añade o corrige tests (pruebas unitarias, etc.).
+* chore: (Chore / Tarea) -> Cambios de mantenimiento que no son ni fix ni feat (ej. actualizar librerías, configurar herramientas).
 
 ## 2. Ámbito (Scope) - Opcional
+
 Un sustantivo entre paréntesis que especifica la sección del código que se modificó.
 
-- feat(api): -> Una nueva característica en la API.
-- fix(auth): -> Un error corregido en el módulo de autenticación.
-- docs(readme): -> Cambios en el archivo README.
+* feat(api): -> Una nueva característica en la API.
+* fix(auth): -> Un error corregido en el módulo de autenticación.
+* docs(readme): -> Cambios en el archivo README.
 
 ## 3. Descripción (Description) - Obligatorio
+
 Una breve descripción del cambio (menos de 50-72 caracteres).
 
-- Empieza con minúscula.
-- Está en modo imperativo (ej. "añade" en lugar de "añadido" o "añadiendo"). Piensa en ello como dar una orden: "Este commit añade...".
+* Empieza con minúscula.
+* Está en modo imperativo (ej. "añade" en lugar de "añadido" o "añadiendo"). Piensa en ello como dar una orden: "Este commit añade...".
 
-### Malos Ejemplos:
-- fix: Arreglé el bug
-- Añadiendo el análisis
-- feat: Nueva función para el análisis de keywords con un nombre muy largo que explica todo
+### Malos Ejemplos
 
-### Buenos Ejemplos:
-- fix: soluciona el error de división por cero
-- feat: añade el script de análisis de Google Ads
-- docs(readme): actualiza las instrucciones de instalación
+* fix: Arreglé el bug
+* Añadiendo el análisis
+* feat: Nueva función para el análisis de keywords con un nombre muy largo que explica todo
+
+### Buenos Ejemplos
+
+* fix: soluciona el error de división por cero
+* feat: añade el script de análisis de Google Ads
+* docs(readme): actualiza las instrucciones de instalación
 
 ## 4. Cuerpo (Body) - Opcional
+
 Aquí es donde explicas el "por qué" del cambio. Se separa del asunto con una línea en blanco.
+
 ```markdown
 fix(parser): soluciona el error al procesar fechas nulas
 
@@ -68,10 +75,13 @@ causando un error en el reporte mensual.
 
 Este commit añade un chequeo .isnull() antes de la conversión.
 ```
+
 ## 5. Pie (Footer) - Opcional
+
 Se usa principalmente para dos cosas:
 
 ### I. BREAKING CHANGES (Cambios Rompedores)
+
 Un cambio que rompe la compatibilidad con versiones anteriores. Se indica con BREAKING CHANGE: en el pie. También puedes usar un ! después del tipo para resaltarlo.
 
 ```markdown
@@ -82,6 +92,7 @@ Todas las aplicaciones cliente deben ser actualizadas.
 ```
 
 ### II. Referenciar Issues (Incidencias)
+
 Para cerrar automáticamente un "issue" o "ticket" en GitHub o Jira.
 
 ```markdown
@@ -92,13 +103,15 @@ Soluciona el problema donde los usuarios quedaban atascados.
 Closes: YX123
 ```
 
-# Ejemplo completo:
+### Ejemplo completo
+
 feat: añade el script de análisis de Google Ads
 
 Crea el script inicial `analysis_google_ads.py` para cargar
 y explorar el set de datos.
 
 Este análisis incluye:
-- Carga del CSV a un DataFrame de Pandas.
-- Inspección básica con .head() e .info().
-- Resumen estadístico con .describe().
+
+* Carga del CSV a un DataFrame de Pandas.
+* Inspección básica con .head() e .info().
+* Resumen estadístico con .describe().
