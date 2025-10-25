@@ -440,7 +440,3 @@ git checkout -b recover <sha>
 - GitHub Docs para Actions, Security, Releases.
 - Guías sobre Git internals y mejores prácticas (buscar “Pro Git”, “Git from the bottom up”).
 - Repositorios de referencia con templates de PR y issue templates.
-
----
-
-### Fin del archivo `.md`
